@@ -1,0 +1,1 @@
+{"name":"@anysphere/git-graph-local-darwin-universal","version":"0.0.0","os":["darwin"],"main":"git-graph-local.darwin-universal.node","files":["git-graph-local.darwin-universal.node"],"license":"MIT","engines":{"node":">= 10"}}

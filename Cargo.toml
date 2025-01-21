@@ -1,0 +1,29 @@
+[package]
+edition = "2021"
+name = "anysphere_git-graph-local"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# for nodejs binding
+napi = { version = "2.12.2", default-features = false, features = ["napi4", "tokio_rt"] }
+napi-derive = "2.12.2"
+
+# actual dependencies
+dashmap = "6.1.0"
+gix = { features = ["max-performance"], version = "0.68.0" }
+hex = "0.4.3"
+rusqlite = "0.32.1"
+tokio = { version = "1.41.1", features = ["process", "io-util", "sync", "macros", "time"] }
+integer-encoding = "4.0.2"
+anyhow = "1.0.93"
+rayon = "1.10.0"
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
+strip = "symbols"
